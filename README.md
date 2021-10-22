@@ -14,19 +14,18 @@ Reason I'm also using RHEL is for compatibility reasons, when creating a video f
 
 ## Gitlab EE
 ```
-sudo dnf install -y curl policycoreutils openssh-server perl```
+sudo dnf install -y curl policycoreutils openssh-server perl
 sudo systemctl start sshd --now
 ```
-# Note only needed if you want to use firewall, generally a GOOD practice but for this throw away demo environment, didn't even bother. Check if opening the firewall is needed with: 
+- Note: only needed if you want to use firewall, generally a GOOD practice but for this throw away demo environment, didn't even bother. Check if opening the firewall is needed with: 
 ```sudo systemctl status firewalld```
 ```
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
 sudo systemctl reload firewalld
 ```
-
 ```curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash```
-- Note that you need to adjust host or ip below to match your own value. 
+- Note: you need to adjust host or ip below to match your own value. 
 ``sudo EXTERNAL_URL="http://<host or ip>" dnf install -y gitlab-ee```
 - Beware that it could take some time for this to complete... 
 - To get the initial root password ```cat /etc/gitlab/initial_root_password```
@@ -40,3 +39,8 @@ sudo systemctl reload firewalld
   - api_password: GitLab API token with the ``api`` scope. See https://gitlab.com/-/profile/personal_access_tokens
 
 # Now create new testrun and sync some issues!
+
+
+# References
+https://github.com/kiwitcms/Kiwi/pull/2565/commits/ae557ac2a774f54fe553a45ce09feab61d8c4e10
+https://docs.docker.com/engine/install/rhel/
