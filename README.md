@@ -1,9 +1,10 @@
 # Sync-Kiwi-Gitlab-issues
 Code for the YouTube video https://youtu.be/DjnyrirGTng
 
-# Step 1 - make sure you have Docker installed 
+## Prerequisites 
+- Make sure you have Docker installed 
 I'm using actual Docker-ce for this video, not Podman see this guide for RHEL https://docs.docker.com/engine/install/rhel/
-Reason I'm also using RHEL is for compatibility reasons, when creating a video for demo want to have not too much issues for the installation. 
+Reason I'm also using RHEL and Docker is for compatibility reasons, when creating a video for demo want to have not too much issues for the installation so I can really focus on the subject matter.
 
 ## KIWI TCMS
 - Install Kiwi through script kiwi.sh ```sudo ./kiwi.sh```
